@@ -42,6 +42,9 @@
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zDC-OB-nYX" userLabel="Brightness Slider">
                                                                 <rect key="frame" x="88" y="0.0" width="296" height="21.5"/>
+                                                                <connections>
+                                                                    <action selector="brightnessChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="R5c-9W-xGT"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -56,6 +59,9 @@
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="fcb-mt-jU4" userLabel="Contrast Slider">
                                                                 <rect key="frame" x="88" y="0.0" width="296" height="21.5"/>
+                                                                <connections>
+                                                                    <action selector="contrastChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wdg-MB-Ixs"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -70,6 +76,9 @@
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="0ph-an-xG5" userLabel="Saturation Slider">
                                                                 <rect key="frame" x="88" y="0.0" width="296" height="21.5"/>
+                                                                <connections>
+                                                                    <action selector="saturationChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xr7-Pb-Txz"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -79,6 +88,9 @@
                                                             <constraint firstAttribute="height" constant="60" id="WX5-ha-JWa"/>
                                                         </constraints>
                                                         <state key="normal" title="Save Photo"/>
+                                                        <connections>
+                                                            <action selector="savePhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dm8-iF-29A"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dn1-cb-8J9" userLabel="Spacer View">
                                                         <rect key="frame" x="0.0" y="201.5" width="382" height="117.5"/>
@@ -117,9 +129,17 @@
                                 <rect key="frame" x="297" y="7" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="choosePhotoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NL4-ph-wVJ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="zDC-OB-nYX" id="NIW-M6-yfq"/>
+                        <outlet property="contrastSlider" destination="fcb-mt-jU4" id="EST-ev-qrR"/>
+                        <outlet property="saturationSlider" destination="0ph-an-xG5" id="V1K-Ep-oLI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

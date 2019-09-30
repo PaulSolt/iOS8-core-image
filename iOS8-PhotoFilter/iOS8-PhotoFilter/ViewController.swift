@@ -14,18 +14,30 @@ class ViewController: UIViewController {
 	private let context = CIContext(options: nil)
 	private let filter = CIFilter(name: "CIColorControls")!
 	
+	private var originalImage: UIImage? {
+		didSet {
+			updateImage()
+		}
+	}
 	
 	@IBOutlet var brightnessSlider: UISlider!
 	@IBOutlet var contrastSlider: UISlider!
 	@IBOutlet var saturationSlider: UISlider!
-	
+	@IBOutlet var imageView: UIImageView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		originalImage = imageView.image // TEMP: store original until picker setup
 	}
 
-
+	private func updateImage() {
+		if let image = originalImage {
+			imageView.image = filterImage(image)
+		} else {
+			// TODO: set to nil? clear it?
+		}
+	}
 	// TODO: Extract to helper file
 	
 	func filterImage(_ image: UIImage) -> UIImage {
@@ -68,14 +80,15 @@ class ViewController: UIViewController {
 	// MARK: Slider events
 	
 	@IBAction func brightnessChanged(_ sender: UISlider) {
+		updateImage()
 	}
 	
 	@IBAction func contrastChanged(_ sender: Any) {
-	
+		updateImage()
 	}
 	
 	@IBAction func saturationChanged(_ sender: Any) {
-	
+		updateImage()
 	}
 }
 

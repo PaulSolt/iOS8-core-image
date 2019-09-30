@@ -138,6 +138,7 @@
                     <connections>
                         <outlet property="brightnessSlider" destination="zDC-OB-nYX" id="NIW-M6-yfq"/>
                         <outlet property="contrastSlider" destination="fcb-mt-jU4" id="EST-ev-qrR"/>
+                        <outlet property="imageView" destination="WLS-Nm-1BZ" id="kN0-JO-lMa"/>
                         <outlet property="saturationSlider" destination="0ph-an-xG5" id="V1K-Ep-oLI"/>
                     </connections>
                 </viewController>

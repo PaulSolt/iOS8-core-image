@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreImage
+import Photos
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,21 @@ class ViewController: UIViewController {
 	private let filter = CIFilter(name: "CIColorControls")!
 	
 	private var originalImage: UIImage? {
+		didSet {
+
+			guard let image = originalImage else { return }
+			
+			var maxSize = imageView.bounds.size
+			let scale = UIScreen.main.scale
+			
+			maxSize = CGSize(width: maxSize.width * scale,
+								height: maxSize.height * scale)
+
+			scaledImage = image.imageByScaling(toSize: maxSize)
+		}
+	}
+	
+	private var scaledImage: UIImage? {
 		didSet {
 			updateImage()
 		}
@@ -28,6 +44,11 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		print("Screen: \(UIScreen.main.bounds) scale: \(UIScreen.main.scale)")
+		print("imageView: \(imageView.bounds)")
+		
+		
+		
 		originalImage = imageView.image // TEMP: store original until picker setup
 	}
 
@@ -74,8 +95,34 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func savePhotoButtonPressed(_ sender: UIButton) {
-		
+		saveFilteredPhoto()
 	}
+	
+	func saveFilteredPhoto() {
+		guard let originalImage = originalImage else { return }
+		
+		let filteredImage = filterImage(originalImage)
+		print("Filtered: \(filteredImage.size)")
+		
+		PHPhotoLibrary.requestAuthorization { (status) in
+			guard status == .authorized else { fatalError("Handle unauthorized user")}
+			
+			PHPhotoLibrary.shared().performChanges({
+				
+				PHAssetCreationRequest.creationRequestForAsset(from: filteredImage
+				)
+				
+			}) { (success, error) in
+				if let error = error {
+					print("Error saving photo: \(error)")
+				}
+				
+				// TODO: present alert if applicable
+				print("Saved photo")
+			}
+		}
+	}
+	
 	
 	// MARK: Slider events
 	

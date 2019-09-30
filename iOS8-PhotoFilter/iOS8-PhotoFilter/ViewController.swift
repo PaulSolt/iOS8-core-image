@@ -62,27 +62,16 @@ class ViewController: UIViewController {
 	// TODO: Extract to helper file
 	
 	func filterImage(_ image: UIImage) -> UIImage {
-		
-//		let ciImage = image.ciImage // NIL! not going to work
-		
 		guard let cgImage = image.cgImage else { fatalError("No image available for filtering")}
 		
-//		CIImage.init(cgImage: cgImage)
 		let ciImage = CIImage(cgImage: cgImage)
-		
-//		filter.setValue(ciImage, forKey: "inputImage")
 		filter.setValue(ciImage, forKey: kCIInputImageKey)
-		
-//		filter.setValue(brightnessSlider.value, forKey: "inputBrightness")
 		filter.setValue(brightnessSlider.value, forKey: kCIInputBrightnessKey)
 		filter.setValue(contrastSlider.value, forKey: kCIInputContrastKey)
 		filter.setValue(saturationSlider.value, forKey: kCIInputSaturationKey)
 		
 		guard let outputCIImage = filter.outputImage else { return image } // default to do nothing if this is not setup ... may want to fatalError() to catch a bug early with filter setup
 		
-//		outputCIImage.cgImage // nil with a CIImage (just a recipe until rendered)
-
-		// Render the image
 		guard let outputCGImage = context.createCGImage(outputCIImage, from: CGRect(origin: .zero, size: image.size)) else { return image } // TODO fatalError?
 		
 		return UIImage(cgImage: outputCGImage)
@@ -91,7 +80,8 @@ class ViewController: UIViewController {
 	// MARK: Actions
 	
 	@IBAction func choosePhotoButtonPressed(_ sender: Any) {
-		
+		// TODO: show the photo picker so we can choose on-device photos
+		// UIImagePickerController + Delegate
 	}
 	
 	@IBAction func savePhotoButtonPressed(_ sender: UIButton) {

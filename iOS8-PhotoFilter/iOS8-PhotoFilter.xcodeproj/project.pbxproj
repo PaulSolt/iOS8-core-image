@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BD9E73D22342624E0010562F /* iOS8-PhotoFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS8-PhotoFilter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9E73D22342624E0010562F /* Filter Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Filter Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9E73D52342624E0010562F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9E73D72342624E0010562F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD9E73D92342624E0010562F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		BD9E73D32342624E0010562F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD9E73D22342624E0010562F /* iOS8-PhotoFilter.app */,
+				BD9E73D22342624E0010562F /* Filter Fun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = "iOS8-PhotoFilter";
 			productName = "iOS8-PhotoFilter";
-			productReference = BD9E73D22342624E0010562F /* iOS8-PhotoFilter.app */;
+			productReference = BD9E73D22342624E0010562F /* Filter Fun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +297,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.iOS8-PhotoFilter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Filter Fun";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -316,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.iOS8-PhotoFilter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Filter Fun";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

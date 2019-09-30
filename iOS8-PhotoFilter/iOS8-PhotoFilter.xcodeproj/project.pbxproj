@@ -13,6 +13,7 @@
 		BD9E73DD2342624E0010562F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9E73DB2342624E0010562F /* Main.storyboard */; };
 		BD9E73DF234262510010562F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9E73DE234262510010562F /* Assets.xcassets */; };
 		BD9E73E2234262510010562F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9E73E0234262510010562F /* LaunchScreen.storyboard */; };
+		BD9E73EA23427C1F0010562F /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9E73E923427C1F0010562F /* UIImage+Scaling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BD9E73DE234262510010562F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD9E73E1234262510010562F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9E73E3234262510010562F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD9E73E923427C1F0010562F /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BD9E73D52342624E0010562F /* AppDelegate.swift */,
 				BD9E73D72342624E0010562F /* SceneDelegate.swift */,
 				BD9E73D92342624E0010562F /* ViewController.swift */,
+				BD9E73E923427C1F0010562F /* UIImage+Scaling.swift */,
 				BD9E73DB2342624E0010562F /* Main.storyboard */,
 				BD9E73DE234262510010562F /* Assets.xcassets */,
 				BD9E73E0234262510010562F /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9E73DA2342624E0010562F /* ViewController.swift in Sources */,
+				BD9E73EA23427C1F0010562F /* UIImage+Scaling.swift in Sources */,
 				BD9E73D62342624E0010562F /* AppDelegate.swift in Sources */,
 				BD9E73D82342624E0010562F /* SceneDelegate.swift in Sources */,
 			);
